@@ -1,0 +1,12 @@
+[submodule "Adafruit_Python_MCP3008"]
+	path = Adafruit_Python_MCP3008
+	url = https://github.com/adafruit/Adafruit_Python_MCP3008.git
+[submodule "pi-sht1x"]
+	path = pi-sht1x
+	url = https://github.com/drohm/pi-sht1x
+[submodule "python-sense-hat"]
+	path = python-sense-hat
+	url = https://github.com/RPi-Distro/python-sense-hat.git
+[submodule "subfact_pi_ina219"]
+	path = subfact_pi_ina219
+	url = https://github.com/scottjw/subfact_pi_ina219.git
