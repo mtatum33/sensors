@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from sense_hat import SenseHat
+from jsonsocket import Client, Server
 
 def get_data():
 # Environmental sensors
@@ -34,19 +35,20 @@ def get_data():
                         'gyroscope_r': gyro_r,
                         'accelerometer': accel,
                         'accelerometer_raw': accel_r}}
-# Test return
-data = get_data()
-imu = data['imu']
 
-# Environmetal Data
-humidity = imu['humidity']
-temperature = imu['temperature']
-pressure = imu['pressure']
+MY_ID=''
+HOST=''
+PORT=2320
 
-# Location/Movement Data
-compass = imu['compass']
-orientation = imu['orientation_deg']
-gyroscope = imu['gyroscope']
-accelerometer = imu['accelerometer']
+client = Client()
+client.connect(HOST, PORT)
 
+while True:
+    # Get all data
+    data = get_data()
+    data['pi_id'] = MY_ID
 
+    # Send it off to the server and confirm reception
+    client.send(data)
+    response = client.recv()
+    print(response)

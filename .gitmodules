@@ -10,3 +10,6 @@
 [submodule "subfact_pi_ina219"]
 	path = subfact_pi_ina219
 	url = https://github.com/scottjw/subfact_pi_ina219.git
+[submodule "jsonsocket"]
+	path = jsonsocket
+	url = https://github.com/mdebbar/jsonsocket
